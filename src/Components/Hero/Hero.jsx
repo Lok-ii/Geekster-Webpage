@@ -5,74 +5,75 @@ import workspace from "../../assets/Images/workspace_premium.svg";
 import business_center from "../../assets/Images/business_center.svg";
 import developer_mode_tv from "../../assets/Images/developer_mode_tv.svg";
 import recaptcha from "../../assets/Images/RecaptchaLogo.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Select from "../Extras/Select";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import bg_lines from "../../assets/Images/bg_lines.svg";
+import amazon1 from "../../assets/Images/amazon 1.png";
+import amazon_logo from "../../assets/Images/amazon_logo.svg";
+import airtel from "../../assets/Images/airtel.png";
+import airtel_logo from "../../assets/Images/airtel_logo.svg";
+import oracle from "../../assets/Images/oracle.png";
+import oracle_logo from "../../assets/Images/oracle_logo.svg";
+import amazon2 from "../../assets/Images/amazon 2.png";
+import amazon3 from "../../assets/Images/amazon 3.png";
+import paypal1 from "../../assets/Images/paypal 1.png";
+import paypal2 from "../../assets/Images/paypal 2.png";
+import paypal_logo from "../../assets/Images/paypal_logo.svg";
+import zolo from "../../assets/Images/zolo.png";
+import zolo_logo from "../../assets/Images/zolo_logo.svg";
+import shiprocket from "../../assets/Images/shiprocket.png";
+import shiprocket_logo from "../../assets/Images/shiprocket_logo.svg";
+import idfc from "../../assets/Images/idfc.png";
+import idfc_logo from "../../assets/Images/idfc_logo.png";
 
 const Hero = () => {
   const [highQ, setHighQ] = useState("default");
   const [year, setYear] = useState("default");
-  const [learnerImages, setLearnerImages] = useState([]);
+  // const [learnerImages, setLearnerImages] = useState([]);
 
-  useEffect(() => {
-    const importImages = async () => {
-      const learnersImageData = [
-        {
-          image: "amazon 1.png",
-          logo: "amazon_logo.svg",
-        },
-        {
-          image: "airtel.png",
-          logo: "airtel_logo.svg",
-        },
-        {
-          image: "oracle.png",
-          logo: "oracle_logo.svg",
-        },
-        {
-          image: "amazon 2.png",
-          logo: "amazon_logo.svg",
-        },
-        {
-          image: "paypal 1.png",
-          logo: "paypal_logo.svg",
-        },
-        {
-          image: "amazon 3.png",
-          logo: "amazon_logo.svg",
-        },
-        {
-          image: "paypal 2.png",
-          logo: "paypal_logo.svg",
-        },
-        {
-          image: "zolo.png",
-          logo: "zolo_logo.svg",
-        },
-        {
-          image: "shiprocket.png",
-          logo: "shiprocket_logo.svg",
-        },
-        {
-          image: "idfc.png",
-          logo: "idfc_logo.png",
-        },
-      ];
-      const importedImages = await Promise.all(
-        learnersImageData.map(async (imageData) => {
-          const image = await import(`../../assets/Images/${imageData.image}`);
-          const imageLogo = await import(
-            `../../assets/Images/${imageData.logo}`
-          );
-          return { image: image.default, logo: imageLogo.default };
-        })
-      );
-      setLearnerImages(importedImages);
-    };
-
-    importImages();
-  }, []);
+  const learnerImages = [
+    {
+      image: amazon1,
+      logo: amazon_logo,
+    },
+    {
+      image: airtel,
+      logo: airtel_logo,
+    },
+    {
+      image: oracle,
+      logo: oracle_logo,
+    },
+    {
+      image: amazon2,
+      logo: amazon_logo,
+    },
+    {
+      image: paypal1,
+      logo: paypal_logo,
+    },
+    {
+      image: amazon3,
+      logo: amazon_logo,
+    },
+    {
+      image: paypal2,
+      logo: paypal_logo,
+    },
+    {
+      image: zolo,
+      logo: zolo_logo,
+    },
+    {
+      image: shiprocket,
+      logo: shiprocket_logo,
+    },
+    {
+      image: idfc,
+      logo: idfc_logo,
+    },
+  ];
 
   return (
     <div className="w-full flex flex-col gap-24 items-center">
@@ -108,7 +109,11 @@ const Hero = () => {
                 </p>
               </div>
               <div className=" bg-white rounded-lg py-2 sm:px-4">
-                <img className="md:w-auto md:px-6 md:h-6 lg:h-10" src={nsdc} alt="" />
+                <img
+                  className="md:w-auto md:px-6 md:h-6 lg:h-10"
+                  src={nsdc}
+                  alt=""
+                />
               </div>
             </div>
             <div className="flex flex-col pt-4 items-start gap-3">

@@ -1,97 +1,80 @@
-import { useEffect } from "react";
 import TeamCard from "../Extras/TeamCard";
 import { useState } from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import bitto from "../../assets/Images/bitto.svg";
+import amazon_logo from "../../assets/Images/amazon_logo.svg";
+import vikas from "../../assets/Images/vikas.png";
+import zomato_logo from "../../assets/Images/zomato_logo.svg";
+import rajneesh from "../../assets/Images/rajneesh.png";
+import google_logo from "../../assets/Images/google_logo.svg";
+import ashish from "../../assets/Images/ashish.png";
+import uber_logo from "../../assets/Images/uber_logo.svg";
 
 const OurTeam = () => {
-  const [teamData, setTeamData] = useState([]);
   const [index, setIndex] = useState(0);
   const length = 4;
   const [height, setHeight] = useState(true);
 
-  useEffect(() => {
-    const getTeamData = async () => {
-      const teamMembers = [
-        {
-          image: "bitto.svg",
-          name: "Bitto Aggarwal",
-          title: "Software Development Engineer",
-          titleSmall: "SDE",
-          company: "amazon_logo.svg",
-        },
-        {
-          image: "vikas.png",
-          name: "Vikas Ranjan",
-          title: "Software Development Engineer",
-          titleSmall: "SDE",
-          company: "zomato_logo.svg",
-        },
-        {
-          image: "rajneesh.png",
-          name: "Rajneesh Kumar",
-          title: "SWE - II",
-          titleSmall: "SWE - II",
-          company: "google_logo.svg",
-        },
-        {
-          image: "ashish.png",
-          name: "Ashish",
-          title: "Software Development Engineer",
-          titleSmall: "SDE",
-          company: "uber_logo.svg",
-        },
-        {
-          image: "bitto.svg",
-          name: "Bitto Aggarwal",
-          title: "Software Development Engineer",
-          titleSmall: "SDE",
-          company: "amazon_logo.svg",
-        },
-        {
-          image: "vikas.png",
-          name: "Vikas Ranjan",
-          title: "Software Development Engineer",
-          titleSmall: "SDE",
-          company: "zomato_logo.svg",
-        },
-        {
-          image: "rajneesh.png",
-          name: "Rajneesh Kumar",
-          title: "SWE - II",
-          titleSmall: "SWE - II",
-          company: "google_logo.svg",
-        },
-        {
-          image: "ashish.png",
-          name: "Ashish",
-          title: "Software Development Engineer",
-          titleSmall: "SDE",
-          company: "uber_logo.svg",
-        },
-      ];
-
-      const importedTeam = await Promise.all(
-        teamMembers.map(async (team) => {
-          const teamImage = await import(`../../assets/Images/${team.image}`);
-          const companyImage = await import(
-            `../../assets/Images/${team.company}`
-          );
-          return {
-            image: teamImage.default,
-            name: team.name,
-            title: team.title,
-            titleSmall: team.titleSmall,
-            company: companyImage.default,
-          };
-        })
-      );
-
-      setTeamData(importedTeam);
-    };
-    getTeamData();
-  }, []);
+  const teamData = [
+    {
+      image: bitto,
+      name: "Bitto Aggarwal",
+      title: "Software Development Engineer",
+      titleSmall: "SDE",
+      company: amazon_logo,
+    },
+    {
+      image: vikas,
+      name: "Vikas Ranjan",
+      title: "Software Development Engineer",
+      titleSmall: "SDE",
+      company: zomato_logo,
+    },
+    {
+      image: rajneesh,
+      name: "Rajneesh Kumar",
+      title: "SWE - II",
+      titleSmall: "SWE - II",
+      company: google_logo,
+    },
+    {
+      image: ashish,
+      name: "Ashish",
+      title: "Software Development Engineer",
+      titleSmall: "SDE",
+      company: uber_logo,
+    },
+    {
+      image: bitto,
+      name: "Bitto Aggarwal",
+      title: "Software Development Engineer",
+      titleSmall: "SDE",
+      company: amazon_logo,
+    },
+    {
+      image: vikas,
+      name: "Vikas Ranjan",
+      title: "Software Development Engineer",
+      titleSmall: "SDE",
+      company: zomato_logo,
+    },
+    {
+      image: rajneesh,
+      name: "Rajneesh Kumar",
+      title: "SWE - II",
+      titleSmall: "SWE - II",
+      company: google_logo,
+    },
+    {
+      image: ashish,
+      name: "Ashish",
+      title: "Software Development Engineer",
+      titleSmall: "SDE",
+      company: uber_logo,
+    },
+  ];
 
   return (
     <div className="relative w-full mt-12 flex flex-col items-center gap-12 text-white">
