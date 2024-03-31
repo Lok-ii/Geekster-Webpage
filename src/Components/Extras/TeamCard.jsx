@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { FaPlay } from "react-icons/fa";
 
-const TeamCard = ({ data }) => {
+const TeamCard = ({ data, style }) => {
   return (
-    <div className="w-[6rem] md:w-[10rem] h-[15rem] md:h-[25rem] flex flex-col items-center relative">
+    <div className="w-[6rem] md:w-[10rem] h-[15rem] md:h-[25rem] flex flex-col items-center relative transition-all duration-300 ease-in-out" style={style}>
       <div className="w-full h-[6rem] md:h-[10rem] rounded-lg absolute top-16 md:top-8 left-0 right-0 z-[1]">
         <img src={data.image} className="rounded-lg object-cover w-full h-full" alt="" />
         <button className="absolute top-[55%] right-[40%] w-8 h-8 flex items-center justify-center bg-geeksterGreenPrimary rounded-[50%]">
@@ -31,6 +31,7 @@ TeamCard.propTypes = {
     titleSmall: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
   }).isRequired,
+  style: PropTypes.object,
 };
 
 export default TeamCard;
