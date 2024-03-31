@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* html{
+    width: 100%;
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+    overflow-x: hidden;
+} */
+
+body{
+    width: 100%;
+    /* color: rgb(41, 180, 117, 0.1); */
+    background-color: #0C1E1B;
+    font-family: "Roboto", sans-serif;
+}
+
+#root{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+
+/* Hide the default number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.backShadow{
+    filter: blur(5rem);
+    box-shadow: 0 0 10rem 0rem #29B475;
+    z-index: -1;
+}
+
+.bottomBackShadow{
+    filter: blur(8rem);
+    box-shadow: 0 0 6rem 1rem #29B475;
+    z-index: -1;
+}
+
+.centerBackShadow{
+    filter: blur(11rem);
+    box-shadow: 0 0 6rem 0rem #29B475;
+    z-index: -1;
+}
+
+.smallBackShadow{
+    filter: blur(14rem);
+}
